@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.ixuea.cources.mycloudmusicproject.R;
 
+//启动界面
 public class SplashActivity extends AppCompatActivity {
 
     @Override
