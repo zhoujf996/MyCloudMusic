@@ -21,6 +21,10 @@
         <activity android:name=".MainActivity">
 
         </activity><!--end主界面-->
+
+        <!--引导界面-->
+        <activity android:name=".activity.GuideActivity"/>
+
     </application>
 
 </manifest>

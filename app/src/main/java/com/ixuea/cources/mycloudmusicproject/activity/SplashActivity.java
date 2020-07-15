@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
     private static final int MESSAGE_NEXT = 100;
     //默认延时时间
     private static final long DEFAULT_DELAY_TIME = 3000;
-    
+
     //创建Handler
     //这样创建会有内存泄漏，以后会性能优化
     private Handler handler = new Handler() {
