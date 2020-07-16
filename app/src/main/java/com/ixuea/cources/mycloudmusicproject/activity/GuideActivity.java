@@ -9,6 +9,7 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ixuea.cources.mycloudmusicproject.MainActivity;
 import com.ixuea.cources.mycloudmusicproject.R;
 
 //引导界面
@@ -62,12 +63,15 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
         //因为有很多个按钮都设置同一个监听器
         //所以这里需要区分到底是哪一个按钮点击
         switch (view.getId()) {
+            //登录注册按钮点击
             case R.id.bt_login_or_register:
                 Log.d(TAG, "onClick login or register");
                 startActivity(LoginOrRegisterActivity.class);
                 break;
+            //立即体验按钮点击
             case R.id.bt_enter:
                 Log.d(TAG, "onClick enter");
+                startActivity(MainActivity.class);
                 break;
         }
     }
