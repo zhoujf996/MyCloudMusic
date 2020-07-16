@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ixuea.cources.mycloudmusicproject.R;
 
 //引导界面
-public class GuideActivity extends AppCompatActivity implements View.OnClickListener {
+public class GuideActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "GuideActivity";
     //快捷键ctrl+alt+f快速生成
@@ -31,16 +31,26 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
         //很明显也设置为其他布局文件
         setContentView(R.layout.activity_guide);
 
+    }
+
+
+    @Override
+    protected void initViews() {
+        super.initViews();
         //隐藏状态栏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         //找控件
         //登录注册按钮
         bt_login_or_register = findViewById(R.id.bt_login_or_register);
         //立即注册按钮
         bt_enter = findViewById(R.id.bt_enter);
+    }
 
+
+    @Override
+    protected void initListeners() {
+        super.initListeners();
         //设置点击事件
         //登录注册按钮
         bt_login_or_register.setOnClickListener(this);
