@@ -27,9 +27,9 @@
 
         <!--        登录注册按钮-->
         <Button
-            android:background="@drawable/shape_color_primary"
             android:layout_width="@dimen/button_width_large"
             android:layout_height="@dimen/button_height"
+            android:background="@drawable/selector_color_primary"
             android:text="@string/login_or_register" />
 
         <!--    占位控件-->
@@ -40,10 +40,10 @@
 
         <!--        立即体验按钮-->
         <Button
-            android:background="@drawable/shape_border_color_primary"
             android:layout_width="@dimen/button_width_large"
             android:layout_height="@dimen/button_height"
-            android:text="@string/login_or_register" />
+            android:background="@drawable/selector_color_primary_reverse"
+            android:text="立即体验" />
 
         <!--    占位控件-->
         <View
