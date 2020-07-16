@@ -14,7 +14,7 @@ import android.view.View;
 import com.ixuea.cources.mycloudmusicproject.R;
 
 //启动界面
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseCommonActivity {
     private static final String TAG = "SplashActivity";
     //下一步常量
     private static final int MESSAGE_NEXT = 100;
@@ -84,22 +84,7 @@ public class SplashActivity extends AppCompatActivity {
         }, DEFAULT_DELAY_TIME);
     }
 
-    //启动界面
-    //Class<？>表示类型不确定的类
-    private void startActivity(Class<?> clazz) {
-        //创建Intent
-        Intent intent = new Intent(this, clazz);
 
-        //启动界面
-        startActivity(intent);
-    }
-
-    //启动界面并关闭当前界面
-    private void startActivityAfterFinishThis(Class<?> clazz) {
-        startActivity(clazz);
-        //关闭当前界面
-        finish();
-    }
 }
 
 

@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ixuea.cources.mycloudmusicproject.R;
 
 //引导界面
-public class GuideActivity extends BaseActivity implements View.OnClickListener {
+public class GuideActivity extends BaseCommonActivity implements View.OnClickListener {
 
     private static final String TAG = "GuideActivity";
     //快捷键ctrl+alt+f快速生成
