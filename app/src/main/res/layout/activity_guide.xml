@@ -1,10 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="这是手动创建的Activity，你说我是不是很厉害？" />
+
+    <!--    占位控件-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!--    按钮容器-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!--    占位控件-->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!--        登录注册按钮-->
+        <Button
+            android:layout_width="@dimen/button_width_large"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/login_or_register" />
+
+        <!--    占位控件-->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!--        立即体验按钮-->
+        <Button
+            android:layout_width="@dimen/button_width_large"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/login_or_register" />
+
+        <!--    占位控件-->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
 </LinearLayout>
