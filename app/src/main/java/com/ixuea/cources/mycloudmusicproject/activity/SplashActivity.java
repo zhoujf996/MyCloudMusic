@@ -3,6 +3,7 @@ package com.ixuea.cources.mycloudmusicproject.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -36,7 +37,17 @@ public class SplashActivity extends AppCompatActivity {
 
     private void next() {
         Log.d(TAG, "next() ");
+//        //创建Intent
+//        Intent intent = new Intent(this, GuideActivity.class);
+//        //启动界面
+//        startActivity(intent);
+//        //关闭当前界面
+//        finish();
+
+        //使用重构后的方法
+        startActivityAfterFinishThis(GuideActivity.class);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,4 +83,23 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, DEFAULT_DELAY_TIME);
     }
+
+    //启动界面
+    //Class<？>表示类型不确定的类
+    private void startActivity(Class<?> clazz) {
+        //创建Intent
+        Intent intent = new Intent(this, clazz);
+
+        //启动界面
+        startActivity(intent);
+    }
+
+    //启动界面并关闭当前界面
+    private void startActivityAfterFinishThis(Class<?> clazz) {
+        startActivity(clazz);
+        //关闭当前界面
+        finish();
+    }
 }
+
+
