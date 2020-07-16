@@ -67,12 +67,20 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
             case R.id.bt_login_or_register:
                 Log.d(TAG, "onClick login or register");
                 startActivity(LoginOrRegisterActivity.class);
+                setShowGuide();
                 break;
             //立即体验按钮点击
             case R.id.bt_enter:
                 Log.d(TAG, "onClick enter");
                 startActivity(MainActivity.class);
+                setShowGuide();
                 break;
         }
+    }
+
+    //设置不再显示引导界面
+    private void setShowGuide() {
+//        PreferenceUtil.getInstance(getMainActivity()).setShowGuide(false);
+        sp.setShowGuide(false);
     }
 }

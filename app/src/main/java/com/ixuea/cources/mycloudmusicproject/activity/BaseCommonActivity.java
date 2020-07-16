@@ -5,8 +5,20 @@ import android.os.Build;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.ixuea.cources.mycloudmusicproject.util.PreferenceUtil;
+
 //通用界面逻辑
 public class BaseCommonActivity extends BaseActivity {
+
+    //偏好设置实例
+    protected PreferenceUtil sp;
+
+    @Override
+    protected void initDatum() {
+        super.initDatum();
+        //初始化偏好设置
+        sp = PreferenceUtil.getInstance(getMainActivity());
+    }
 
     //全屏
     protected void fullScreen() {

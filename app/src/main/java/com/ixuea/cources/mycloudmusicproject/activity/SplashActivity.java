@@ -12,6 +12,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 
+import com.ixuea.cources.mycloudmusicproject.MainActivity;
 import com.ixuea.cources.mycloudmusicproject.R;
 
 //启动界面
@@ -45,9 +46,13 @@ public class SplashActivity extends BaseCommonActivity {
 //        startActivity(intent);
 //        //关闭当前界面
 //        finish();
-
-        //使用重构后的方法
-        startActivityAfterFinishThis(GuideActivity.class);
+        if (sp.isShowGuide()) {
+            //使用重构后的方法
+            startActivityAfterFinishThis(GuideActivity.class);
+        } else {
+            //跳转到登录注册界面
+            startActivityAfterFinishThis(LoginOrRegisterActivity.class);
+        }
     }
 
 
@@ -73,27 +78,26 @@ public class SplashActivity extends BaseCommonActivity {
     @Override
     protected void initDatum() {
         super.initDatum();
-        //测试使用偏好设置
-        // 获取偏移设置对象
-        SharedPreferences preferences = getSharedPreferences("ixuea", MODE_PRIVATE);
-
-        //保存一个字符串"我们是爱学啊"
-        // 存储的键为：username
-        preferences.edit().putString("username", "我们是爱学啊").commit();
-
-        //通过键找到上面存储的值
-        String username = preferences.getString("username", null);
-
-        //打印出来，方便调试
-        Log.d(TAG, "initDatum: "+"第一次获取值"+username);
-
-        //删除该key对应的值
-        preferences.edit().remove("username").commit();
-
-        //再次获取
-        username=preferences.getString("username",null);
-        Log.d(TAG,"initDatum"+"删除后再次获取值"+username);
-
+//        //测试使用偏好设置
+//        // 获取偏移设置对象
+//        SharedPreferences preferences = getSharedPreferences("ixuea", MODE_PRIVATE);
+//
+//        //保存一个字符串"我们是爱学啊"
+//        // 存储的键为：username
+//        preferences.edit().putString("username", "我们是爱学啊").commit();
+//
+//        //通过键找到上面存储的值
+//        String username = preferences.getString("username", null);
+//
+//        //打印出来，方便调试
+//        Log.d(TAG, "initDatum: "+"第一次获取值"+username);
+//
+//        //删除该key对应的值
+//        preferences.edit().remove("username").commit();
+//
+//        //再次获取
+//        username=preferences.getString("username",null);
+//        Log.d(TAG,"initDatum"+"删除后再次获取值"+username);
     }
 }
 
