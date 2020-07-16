@@ -40,6 +40,7 @@
 
         <!--        立即体验按钮-->
         <Button
+            android:background="@drawable/shape_border_color_primary"
             android:layout_width="@dimen/button_width_large"
             android:layout_height="@dimen/button_height"
             android:text="@string/login_or_register" />
