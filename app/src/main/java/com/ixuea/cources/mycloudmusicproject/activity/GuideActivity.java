@@ -64,6 +64,7 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
         switch (view.getId()) {
             case R.id.bt_login_or_register:
                 Log.d(TAG, "onClick login or register");
+                startActivity(LoginOrRegisterActivity.class);
                 break;
             case R.id.bt_enter:
                 Log.d(TAG, "onClick enter");

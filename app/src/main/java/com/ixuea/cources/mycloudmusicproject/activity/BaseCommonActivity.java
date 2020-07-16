@@ -42,10 +42,10 @@ public class BaseCommonActivity extends BaseActivity {
     protected void startActivity(Class<?> clazz) {
         //创建Intent
         Intent intent = new Intent(getMainActivity(), clazz);
-
         //启动界面
         startActivity(intent);
     }
+
 
     //启动界面并关闭当前界面
     protected void startActivityAfterFinishThis(Class<?> clazz) {
@@ -58,6 +58,5 @@ public class BaseCommonActivity extends BaseActivity {
     protected BaseCommonActivity getMainActivity() {
         return this;
     }
-
 
 }
