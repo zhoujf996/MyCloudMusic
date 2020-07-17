@@ -16,7 +16,7 @@ import com.ixuea.cources.mycloudmusicproject.util.Constant;
 
 
 //引导界面
-public class GuideFragment extends BaseFragment {
+public class GuideFragment extends BaseCommonFragment {
     //图片控件
     private ImageView iv;
 
