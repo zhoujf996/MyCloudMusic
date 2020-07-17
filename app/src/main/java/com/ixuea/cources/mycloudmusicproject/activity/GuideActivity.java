@@ -12,6 +12,9 @@ import com.ixuea.cources.mycloudmusicproject.MainActivity;
 import com.ixuea.cources.mycloudmusicproject.R;
 import com.ixuea.cources.mycloudmusicproject.adapter.GuideAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //引导界面
 public class GuideActivity extends BaseCommonActivity implements View.OnClickListener {
 
@@ -72,6 +75,17 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
 
          //设置适配器到控件
         vp.setAdapter(adapter);
+
+        //准备数据
+        List<Integer> datum=new ArrayList<>();
+        datum.add(R.drawable.guide1);
+        datum.add(R.drawable.guide2);
+        datum.add(R.drawable.guide3);
+        datum.add(R.drawable.guide4);
+        datum.add(R.drawable.guide5);
+
+        //设置数据到适配器
+        adapter.setDatum(datum);
     }
 
     @Override
