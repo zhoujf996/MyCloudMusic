@@ -50,7 +50,7 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
         //测试显示fragment
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.container,GuideFragment.newInstance())
+                .replace(R.id.container,GuideFragment.newInstance(R.drawable.guide2))
                 .commit();
 
     }

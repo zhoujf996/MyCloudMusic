@@ -6,9 +6,12 @@
     tools:context=".fragment.GuideFragment">
 
 
-    <TextView
+    <!--    图片控件-->
+    <ImageView
+        android:src="@drawable/splash_logo"
+        android:id="@+id/iv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="这是fragment" />
+        android:scaleType="centerInside" />
 
 </FrameLayout>
