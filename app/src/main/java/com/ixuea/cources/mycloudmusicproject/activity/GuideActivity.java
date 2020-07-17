@@ -15,6 +15,8 @@ import com.ixuea.cources.mycloudmusicproject.adapter.GuideAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.relex.circleindicator.CircleIndicator;
+
 //引导界面
 public class GuideActivity extends BaseCommonActivity implements View.OnClickListener {
 
@@ -29,8 +31,10 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
     //左右滚动控件
     private ViewPager vp;
 
-    //
+    //适配器
     private GuideAdapter adapter;
+    //指示器
+    private CircleIndicator ci;
 
     //当界面创建的时候
     //一定要注意：
@@ -53,6 +57,8 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
         hidenStatusBar();
         //ViewPager控件
         vp = findViewById(R.id.vp);
+        //指示器
+        ci = findViewById(R.id.ci);
 
         //找控件
         //登录注册按钮
@@ -71,13 +77,19 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
     protected void initDatum() {
         super.initDatum();
         //创建适配器
-         adapter = new GuideAdapter(getSupportFragmentManager());
+        adapter = new GuideAdapter(getSupportFragmentManager());
 
-         //设置适配器到控件
+        //设置适配器到控件
         vp.setAdapter(adapter);
 
+        //让指示器根据列表控件配合工作
+        ci.setViewPager(vp);
+
+        //适配器注册数据源观察者
+        adapter.registerDataSetObserver(ci.getDataSetObserver());
+
         //准备数据
-        List<Integer> datum=new ArrayList<>();
+        List<Integer> datum = new ArrayList<>();
         datum.add(R.drawable.guide1);
         datum.add(R.drawable.guide2);
         datum.add(R.drawable.guide3);
