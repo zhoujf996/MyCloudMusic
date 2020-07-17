@@ -16,7 +16,7 @@ import com.ixuea.cources.mycloudmusicproject.util.Constant;
 
 
 //引导界面
-public class GuideFragment extends Fragment {
+public class GuideFragment extends BaseFragment {
     //图片控件
     private ImageView iv;
 
@@ -25,7 +25,7 @@ public class GuideFragment extends Fragment {
         // Required empty public constructor
     }
 
-    //创建 方法
+    //创建方法
     public static GuideFragment newInstance(int id) {
         //创建fragment
         GuideFragment fragment = new GuideFragment();
@@ -39,25 +39,28 @@ public class GuideFragment extends Fragment {
         return fragment;
     }
 
+
     //返回要显示的view
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
+    protected View getLayoutView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_guide, container, false);
     }
 
-    //View创建完毕了
+    //找控件
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void initViews() {
+        super.initViews();
         //找控件
-        iv = getView().findViewById(R.id.iv);
-        //取出传递的数据
-        int id = getArguments().getInt(Constant.ID,-1);
+        iv = findViewById(R.id.iv);
+    }
 
+    @Override
+    protected void initDatum() {
+        super.initDatum();
+        //取出传递的数据
+        int id = getArguments().getInt(Constant.ID, -1);
         //判断数据格式
-        if(id==-1){
+        if (id == -1) {
             //如果图片不存在
             //就关闭当前界面
             //但在我们这里不会发生该情况

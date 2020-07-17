@@ -52,7 +52,6 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
                 .beginTransaction()
                 .replace(R.id.container,GuideFragment.newInstance(R.drawable.guide2))
                 .commit();
-
     }
 
 
