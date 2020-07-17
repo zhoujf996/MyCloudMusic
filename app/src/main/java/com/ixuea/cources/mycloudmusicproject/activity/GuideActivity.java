@@ -77,7 +77,7 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
     protected void initDatum() {
         super.initDatum();
         //创建适配器
-        adapter = new GuideAdapter(getSupportFragmentManager());
+        adapter = new GuideAdapter(getMainActivity(),getSupportFragmentManager());
 
         //设置适配器到控件
         vp.setAdapter(adapter);
