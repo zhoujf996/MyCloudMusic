@@ -46,13 +46,14 @@ public class SplashActivity extends BaseCommonActivity {
 //        startActivity(intent);
 //        //关闭当前界面
 //        finish();
-        if (sp.isShowGuide()) {
+
+//        if (sp.isShowGuide()) {
             //使用重构后的方法
             startActivityAfterFinishThis(GuideActivity.class);
-        } else {
+//        } else {
             //跳转到登录注册界面
-            startActivityAfterFinishThis(LoginOrRegisterActivity.class);
-        }
+//            startActivityAfterFinishThis(LoginOrRegisterActivity.class);
+//        }
     }
 
 

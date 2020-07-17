@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ixuea.cources.mycloudmusicproject.MainActivity;
 import com.ixuea.cources.mycloudmusicproject.R;
+import com.ixuea.cources.mycloudmusicproject.fragment.GuideFragment;
 
 //引导界面
 public class GuideActivity extends BaseCommonActivity implements View.OnClickListener {
@@ -45,6 +46,13 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
         bt_login_or_register = findViewById(R.id.bt_login_or_register);
         //立即注册按钮
         bt_enter = findViewById(R.id.bt_enter);
+
+        //测试显示fragment
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container,GuideFragment.newInstance())
+                .commit();
+
     }
 
 
