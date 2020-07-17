@@ -31,4 +31,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    //圆形指示器
+    // https://github.com/ongakuer/CircleIndicator
+    implementation 'me.relex:circleindicator:2.1.4'
 }
