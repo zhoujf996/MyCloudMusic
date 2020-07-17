@@ -3,15 +3,14 @@ package com.ixuea.cources.mycloudmusicproject.activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.ixuea.cources.mycloudmusicproject.MainActivity;
 import com.ixuea.cources.mycloudmusicproject.R;
-import com.ixuea.cources.mycloudmusicproject.fragment.GuideFragment;
+import com.ixuea.cources.mycloudmusicproject.adapter.GuideAdapter;
 
 //引导界面
 public class GuideActivity extends BaseCommonActivity implements View.OnClickListener {
@@ -20,7 +19,15 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
     //快捷键ctrl+alt+f快速生成
     //登录注册按钮
     private Button bt_login_or_register;
+
+    //立即体验按钮
     private Button bt_enter;
+
+    //左右滚动控件
+    private ViewPager vp;
+
+    //
+    private GuideAdapter adapter;
 
     //当界面创建的时候
     //一定要注意：
@@ -41,6 +48,9 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
         super.initViews();
         //隐藏状态栏
         hidenStatusBar();
+        //ViewPager控件
+        vp = findViewById(R.id.vp);
+
         //找控件
         //登录注册按钮
         bt_login_or_register = findViewById(R.id.bt_login_or_register);
@@ -48,12 +58,21 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
         bt_enter = findViewById(R.id.bt_enter);
 
         //测试显示fragment
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.container,GuideFragment.newInstance(R.drawable.guide2))
-                .commit();
+//        getSupportFragmentManager()
+//                .beginTransaction()
+//                .replace(R.id.container, GuideFragment.newInstance(R.drawable.guide2))
+//                .commit();
     }
 
+    @Override
+    protected void initDatum() {
+        super.initDatum();
+        //创建适配器
+         adapter = new GuideAdapter(getSupportFragmentManager());
+
+         //设置适配器到控件
+        vp.setAdapter(adapter);
+    }
 
     @Override
     protected void initListeners() {
