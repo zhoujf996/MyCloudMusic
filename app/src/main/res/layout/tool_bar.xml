@@ -9,7 +9,6 @@ elevation：阴影高度-->
     android:theme="@style/AppTheme.AppBarOverlay">
     <!--Toolbar控件-->
     <androidx.appcompat.widget.Toolbar
-        app:titleTextColor="@color/white"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
