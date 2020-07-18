@@ -1,11 +1,16 @@
 package com.ixuea.cources.mycloudmusicproject.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import com.ixuea.cources.mycloudmusicproject.util.PreferenceUtil;
+
+import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
 
 //通用界面逻辑
 public class BaseCommonActivity extends BaseActivity {
@@ -48,6 +53,26 @@ public class BaseCommonActivity extends BaseActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
+
+    //状态栏文字显示白色，内容显示到状态栏下面
+    protected void lightStatusBar() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+            //状态栏颜色设置为透明
+            Window window = getWindow();
+            //背景颜色透明
+            window.setStatusBarColor(Color.TRANSPARENT);
+            //去除半透明状态栏（如果有的话）
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            //SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN：让内容显示到状态栏
+            //SYSTEM_UI_FLAG_LAYOUT_STABLE：状态栏文字显示白色
+            //SYSTEM_UI_FLAG_LIGHT_STATUS_BAR：状态栏文字显示黑色
+            window.getDecorView().setSystemUiVisibility(
+                    SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | SYSTEM_UI_FLAG_LAYOUT_STABLE
+            );
+        }
+    }
+
 
     //启动界面
     //Class<？>表示类型不确定的类
