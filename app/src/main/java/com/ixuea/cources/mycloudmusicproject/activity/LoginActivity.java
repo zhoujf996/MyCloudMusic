@@ -10,6 +10,7 @@ import android.widget.EditText;
 import androidx.appcompat.widget.Toolbar;
 
 import com.ixuea.cources.mycloudmusicproject.R;
+import com.ixuea.cources.mycloudmusicproject.util.LogUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -33,12 +34,12 @@ public class LoginActivity extends BaseTitleActivity {
     //    登录按钮点击了
     @OnClick(R.id.bt_login)
     public void onLoginClick(Button view) {
-        Log.d(TAG, "onLoginClick");
+        LogUtil.d(TAG, "onLoginClick");
     }
 
     //    忘记密码按钮点击了
     @OnClick({R.id.bt_forget})
     public void onForgetPasswordClick() {
-        Log.d(TAG, "onForgetPasswordClick");
+        LogUtil.d(TAG, "onForgetPasswordClick");
     }
 }
