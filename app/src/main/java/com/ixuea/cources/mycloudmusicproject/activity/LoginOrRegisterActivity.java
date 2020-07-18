@@ -39,7 +39,6 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
         super.initListeners();
         bt_login.setOnClickListener(this);
         bt_register.setOnClickListener(this);
-
     }
 
     //点击回调方法
@@ -49,6 +48,8 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
             //登录按钮
             case R.id.bt_login:
                 Log.d(TAG, "onClick: login");
+                
+                startActivity(LoginActivity.class);
                 break;
             //注册按钮
             case R.id.bt_register:
