@@ -19,18 +19,21 @@
         <!--这里不能使用maxLength限制最长字符数
              因为这里用户名还有邮箱-->
         <EditText
+            android:id="@+id/et_username"
             style="@style/EditText"
             android:hint="@string/enter_username"
             android:inputType="textEmailAddress" />
 
         <!--        密码输入框-->
         <EditText
+            android:id="@+id/et_passwprd"
             style="@style/EditText"
             android:hint="@string/enter_password"
             android:inputType="textPassword" />
 
         <!--                登录按钮-->
         <Button
+            android:id="@+id/bt_login"
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
             android:layout_marginTop="@dimen/padding_large"
@@ -39,6 +42,7 @@
             android:textColor="@drawable/selector_text_color_primary_reverse" />
         <!--        忘记密码按钮-->
         <Button
+            android:id="@+id/bt_forget"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_height"
