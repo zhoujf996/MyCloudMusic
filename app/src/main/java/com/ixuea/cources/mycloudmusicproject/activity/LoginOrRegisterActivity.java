@@ -33,8 +33,7 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
     @Override
     protected void initViews() {
         super.initViews();
-        //初始化ButterKnife
-        ButterKnife.bind(this);
+        
         //显示亮色状态栏
         lightStatusBar();
 

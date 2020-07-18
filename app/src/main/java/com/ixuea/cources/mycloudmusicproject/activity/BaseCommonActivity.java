@@ -9,6 +9,8 @@ import android.view.WindowManager;
 
 import com.ixuea.cources.mycloudmusicproject.util.PreferenceUtil;
 
+import butterknife.ButterKnife;
+
 import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
 import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
 
@@ -17,6 +19,28 @@ public class BaseCommonActivity extends BaseActivity {
 
     //偏好设置实例
     protected PreferenceUtil sp;
+
+    @Override
+    protected void initViews() {
+        super.initViews();
+
+        //初始化注解找控件
+        //绑定方法框架
+        if (isBindView()) {
+            bindView();
+        }
+    }
+
+    //是否绑定View
+    protected boolean isBindView() {
+        return true;
+    }
+
+    //绑定View
+    protected void bindView() {
+        ButterKnife.bind(this);
+    }
+
 
     @Override
     protected void initDatum() {
