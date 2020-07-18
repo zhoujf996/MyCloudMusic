@@ -48,12 +48,14 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
             //登录按钮
             case R.id.bt_login:
                 Log.d(TAG, "onClick: login");
-                
+
                 startActivity(LoginActivity.class);
                 break;
             //注册按钮
             case R.id.bt_register:
                 Log.d(TAG, "onClick: register");
+
+                startActivity(RegisterActivity.class);
                 break;
         }
     }
