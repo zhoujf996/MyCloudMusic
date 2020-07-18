@@ -6,22 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.LoginActivity">
 
-    <!--AppBarLayout主要用来实现标题折叠功能
-    elevation：阴影高度-->
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="0dp"
-        android:theme="@style/AppTheme.AppBarOverlay">
-        <!--Toolbar控件-->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-    </com.google.android.material.appbar.AppBarLayout>
-
+    <include layout="@layout/tool_bar"/>
     <!--内容部分
     layout_behavior:用来控制内容区域-->
     <LinearLayout
