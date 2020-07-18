@@ -13,11 +13,13 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.ixuea.cources.mycloudmusicproject.R;
 import com.ixuea.cources.mycloudmusicproject.util.LogUtil;
+import com.ixuea.cources.mycloudmusicproject.util.ToastUtil;
 
 import org.apache.commons.lang3.StringUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import es.dmoral.toasty.Toasty;
 
 //登录界面
 public class LoginActivity extends BaseTitleActivity {
@@ -45,7 +47,9 @@ public class LoginActivity extends BaseTitleActivity {
         //调用lang3包下的的StringUtils判断用户名是否为空
         if (StringUtils.isBlank(username)) {
             LogUtil.w(TAG, "onLoginClick username empty");
-            Toast.makeText(getMainActivity(), R.string.enter_username, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getMainActivity(), R.string.enter_username, Toast.LENGTH_SHORT).show();
+            //Toasty.error(getMainActivity(), R.string.enter_username, Toast.LENGTH_SHORT).show();
+            ToastUtil.errorShortToast(getMainActivity(), R.string.enter_username);
             //由于不希望再向下执行，所以调用return方法
             return;
         }
@@ -54,11 +58,13 @@ public class LoginActivity extends BaseTitleActivity {
         //调用lang3包下的的StringUtils判断用户名是否为空
         if (TextUtils.isEmpty(password)) {
             LogUtil.w(TAG, "onLoginClick passwprd empty");
-            Toast.makeText(getMainActivity(), R.string.enter_password, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getMainActivity(), R.string.enter_password, Toast.LENGTH_SHORT).show();
+            ToastUtil.errorShortToast(getMainActivity(), R.string.enter_password);
             //由于不希望再向下执行，所以调用return方法
             return;
         }
         //调用登录方法
+        ToastUtil.successShortToast(getMainActivity(), R.string.login_success);
     }
 
     //    忘记密码按钮点击了

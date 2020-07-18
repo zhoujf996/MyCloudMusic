@@ -55,4 +55,11 @@ dependencies {
     // 提供了StringUtils等这样的类
     // http://commons.apache.org/proper/commons-lang/
     implementation 'org.apache.commons:commons-lang3:3.9'
-} 
+
+    //toast工具类
+    //https://github.com/GrenderG/Toasty
+    //需要在allprojects的repositories中添加
+    //maven { url "https://jitpack.io" }才能使用
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+
+}
